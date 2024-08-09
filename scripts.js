@@ -1,4 +1,4 @@
-// Matrix effect setup
+// kwinjir kwa matrices
 const matrixCanvas = document.createElement("canvas");
 const ctx = matrixCanvas.getContext("2d");
 document.getElementById("matrix").appendChild(matrixCanvas);
@@ -29,13 +29,13 @@ function drawMatrix() {
   }
 }
 
-setInterval(drawMatrix, 33); // Adjust speed of the effect
+setInterval(drawMatrix, 33); // umvuduko
 
-// Terminal functionality
+// functionalty
 const commandInput = document.getElementById("command");
 const outputArea = document.getElementById("output");
 
-// Simulated file system
+// cmd  inputs
 const fileSystem = {
   "/": ["home", "var", "etc"],
   "/home": ["user1", "user2"],
@@ -47,7 +47,6 @@ const fileSystem = {
 
 let currentPath = "/home/user1";
 
-// Command responses
 const commands = {
   ls: () => {
     return fileSystem[currentPath]
@@ -73,7 +72,7 @@ const commands = {
   mkdir: (dir) => {
     if (!fileSystem[currentPath]) fileSystem[currentPath] = [];
     fileSystem[currentPath].push(dir);
-    fileSystem[`${currentPath}/${dir}`] = []; // Create new directory
+    fileSystem[`${currentPath}/${dir}`] = [];
     return `Directory ${dir} created`;
   },
   rm: (filename) => {
